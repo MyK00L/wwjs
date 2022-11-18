@@ -59,7 +59,8 @@ button:hover {
 			this.s^=this.s<<13;
 			this.s^=this.s>>17;
 			this.s^=this.s<<5;
-			return Math.abs(this.s+2**31);
+			// remove high bit to convert to u31
+			return this.s&0x7fffffff;
 		}
 	}
 	let state="home";
