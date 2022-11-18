@@ -39,7 +39,7 @@ button:hover {
 	max-width:25% !important;
 }
 </style>
-<script src="topics.js"></script> 
+<script src="topics.js"></script>
 <script>
 	"use strict";
 	/*
@@ -50,7 +50,6 @@ button:hover {
 		play1 (wolf revealed) -> play2
 		play2 (words revealed) -> wait
 	*/
-	let topics = [];
 	let rng = {
 		s:0,
 		next: function(){
@@ -70,7 +69,6 @@ button:hover {
 	let wolf_word="";
 	let citizen_word="";
 	function init(){
-		topics=get_topics();
 		state="home";
 		document.getElementById("seed").value=Math.floor((Math.random()*((2**32)-1))-(2**31)).toString();
 		rng.s=Number(document.getElementById("seed").value)
